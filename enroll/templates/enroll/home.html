@@ -1,18 +1,18 @@
 {% extends 'enroll/base.html' %}
 
 {% block content %}
-<div class="row p-1">
-  <div class="col-sm-4  b-2px border  p-4 rounded shadow">
-      <h4 class="text-center alert alert-info">Add New Student</h4>
+<div class="row p-2">
+  <div class="col-3  b-2px border py-4 ms-4 rounded shadow">
+      <h4 class="text-center text-dark alert alert-info">Add New Student</h4>
       <form class="" action="" method="POST">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" class="btn btn-success" name="" value="Add">
+          <input type="submit" class="btn btn-success form-control" name="" value="Add">
         </form>
   </div>
 
-  <div class="col-sm-7 offset-1  b-2px border  p-4 rounded shadow">
-    <h4 class="text-center alert alert-info " >Show Students Information</h4>
+  <div class="col-8 ms-5  b-2px border  p-4 rounded shadow">
+    <h4 class="text-center alert text-dark alert-info " >Show Students Information</h4>
     {% if all_data %}
     <table class="table table-hover text-center">
         <thead>

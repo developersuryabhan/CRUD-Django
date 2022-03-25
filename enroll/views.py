@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render, HttpResponseRedirect, redirect
 from .forms import StudentRegistration
 from .models import User
 
@@ -7,7 +7,6 @@ from .models import User
 def home(request):
     if request.method == 'POST':
         form = StudentRegistration(request.POST)
-
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
@@ -19,7 +18,7 @@ def home(request):
     else:
         form = StudentRegistration()
 #Show Data
-    data = User.objects.all() 
+    data = User.objects.all()
     return render(request, 'enroll/home.html', {'form':form, 'all_data': data})
 
 # This  function will Update/Edit
@@ -29,7 +28,7 @@ def update_user(request, id):
         form = StudentRegistration(request.POST, instance=data)
         if form.is_valid():
             form.save()
-            form = StudentRegistration()
+            return redirect('/')
 
     else:
         data = User.objects.get(pk=id)
