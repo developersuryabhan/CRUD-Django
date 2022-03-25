@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8 ">
+    <title>CRUD - Suryabhan</title>
+    <link rel="stylesheet" href="{% static 'enroll/css/bootstrap.css'%}">
+  </head>
+  <body>
+
+  <div class="container m-5 " >
+    <h2 class="text-center alert alert-danger b-2px border  p-4 rounded shadow">Function Base View ModelForm CURD Project</h2>
+    {% block content %} {% endblock content %}
+  </div>
+
+
+    <script src="{% static 'enroll/js/bootstrap.js'%}" charset="utf-8"></script>
+    <script src="{% static 'enroll/js/popper.js'%}" charset="utf-8"></script>
+    <script src="{% static 'enroll/js/jquery.js'%}" charset="utf-8"></script>
+  </body>
+</html>
